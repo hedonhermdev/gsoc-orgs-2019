@@ -6,7 +6,10 @@ with open('orgs-19.json', 'r') as file:
 
 tech = input("Name of technology: ")
 
-python_orgs = [org for org in filter(lambda x: tech in x['technologies'], organizations)]
+if tech:
+    results = [org for org in filter(lambda x: tech in x['technologies'], organizations)]
+else:
+    results = organizations
 
-pretty_print_results(python_orgs)
+pretty_print_results(results)
 
